@@ -12,17 +12,7 @@
 <body>
 
     <div id="root">
-        <p>{{nome}}</p>
-        <input v-model="nome">
-
-        <div v-if="visivel">
-            <h4>DIV1</h4>
-        </div>
-
-        <div v-else>
-            <h4>DIV2</h4>
-        </div>
-
+        <p v-for="value in clientes">{{value.nome}} tem {{value.idade}} de idade</p>
     </div>
 
     <script>
@@ -30,8 +20,15 @@
         let root = new Vue({
             el: "#root",
             data: {
-                nome: "Helbert Aguiar",
-                visivel: false
+                clientes: [
+                            {nome: 'joao', idade: 45},
+                            {nome: 'helbert', idade: 28},
+                            {nome: 'grazielle', idade: 34},
+                            {nome: 'antonio', idade: 21}
+                ]
+                // nomes: ['joao', 'helbert', 'grazielle', 'antonio']
+            },
+            methods: {
             }
         });
 
