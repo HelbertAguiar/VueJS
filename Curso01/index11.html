@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Importação do VUE -->
+    <script src="../vue/vue2.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3"></script> -->
+</head>
+<body>
+
+    <div id="root">
+        <!-- <span>{{valor}}</span> -->
+        <span v-text="valor"></span> <!-- interpretado como texto -->
+        <span v-html="valor"></span> <!-- interpretado como texto html -->
+        <div>
+            <button @click="t1">Titulo1</button>
+            <button @click="t3">Titulo3</button>
+            <button @click="t5">Titulo5</button>
+        </div>
+    </div>
+
+    <script>
+
+        let root = new Vue({
+            el: "#root",
+            data: {
+                valor:'<h1>Titulo Vue</h1>'
+            },
+            methods: {
+                t1: function(){
+                    this.valor = '<h1>Titulo Vue Novo</h1>'
+                },
+                t3: function(){
+                    this.valor = '<h3>Titulo Vue Novo</h3>'
+                },
+                t5: function(){
+                    this.valor = '<h5>Titulo Vue Novo</h5>'
+                }
+            }
+        });
+
+    </script>
+
+</body>
+</html>

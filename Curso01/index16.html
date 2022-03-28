@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Importação do VUE -->
+    <script src="../vue/vue2.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3"></script> -->
+</head>
+<body>
+
+    <div id="root">
+        <novo></novo>
+    </div>
+
+    <script>
+
+
+        Vue.component('novo',{
+            // aspas simples na verdade eh acento crase
+            // somente pode ter um root element no atributo 'template'
+            template: `
+                <div>
+                    Olá Mundo
+                    <b> hahaha</b>
+                </div>
+            `
+        });
+
+        let root = new Vue({
+            el: "#root",
+            component: [
+                'novo'
+            ]
+        });
+    </script>
+
+</body>
+</html>
